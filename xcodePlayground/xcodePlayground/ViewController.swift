@@ -7,6 +7,8 @@
 //(red: 48, green: 72, blue: 120, alpha: 1)
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -21,7 +23,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hateoas()
 //        let header = UIView(frame : CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height * 0.08))
 //        header.backgroundColor = UIColor.red
 //        self.view.addSubview(header)
@@ -33,6 +35,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func hateoas() {
+        Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
+            if let result = response.result.value {
+                let json = JSON(result)
+                print(json["_links"]["predictions"]["href"])
+            }
+        }
+    }
 }
 
