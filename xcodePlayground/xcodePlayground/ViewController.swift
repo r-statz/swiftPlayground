@@ -10,12 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func GoToSecondPage(_ sender: Any) {
+        performSegue(withIdentifier: "Segue",  sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC : SecondViewController = segue.destination as! SecondViewController
+        destVC.dataFromFirst = "Hello there!"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let header = UIView(frame : CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height * 0.08))
-        header.backgroundColor = UIColor.red
-        self.view.addSubview(header)
+//        let header = UIView(frame : CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height * 0.08))
+//        header.backgroundColor = UIColor.red
+//        self.view.addSubview(header)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

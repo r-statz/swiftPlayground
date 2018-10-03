@@ -58,6 +58,17 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.87450980392156863" green="0.88627450980392153" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hy1-m7-L8g" customClass="Button">
+                                <rect key="frame" x="104" y="136" width="167" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.72941402229999996" blue="0.88185302180000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Go To Second Screen">
+                                    <color key="titleColor" red="0.18823529410000001" green="0.28235294119999998" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ee6-cD-Isl" kind="presentation" identifier="Segue" id="C3O-c5-Gss"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -73,25 +84,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132.88043478260872" y="128.98550724637681"/>
+            <point key="canvasLocation" x="-450" y="63"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="Xpn-Xm-s1K">
             <objects>
-                <viewController id="Ee6-cD-Isl" sceneMemberID="viewController">
+                <viewController id="Ee6-cD-Isl" customClass="SecondViewController" customModule="xcodePlayground" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fKa-8i-jRe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnj-2f-XAO">
+                                <rect key="frame" x="149" y="152" width="76" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="icon_76pt"/>
+                                <connections>
+                                    <action selector="LogoButton:" destination="Ee6-cD-Isl" eventType="touchUpInside" id="0ay-Xs-4aT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DisplayLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQI-M9-za6">
+                                <rect key="frame" x="137" y="305" width="101" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZaE-7S-Zq1"/>
                     </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="EQI-M9-za6" id="qTn-E1-wnw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0y-rL-pHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="130"/>
+            <point key="canvasLocation" x="349.60000000000002" y="62.518740629685162"/>
         </scene>
     </scenes>
     <resources>
         <image name="FF Logo" width="600" height="600"/>
+        <image name="icon_76pt" width="76" height="76"/>
     </resources>
 </document>
