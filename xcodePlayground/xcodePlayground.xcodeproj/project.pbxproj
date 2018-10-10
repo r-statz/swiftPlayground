@@ -12,6 +12,7 @@
 		0016640F2163E20500DF67EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0016640D2163E20500DF67EA /* Main.storyboard */; };
 		001664112163E20600DF67EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001664102163E20600DF67EA /* Assets.xcassets */; };
 		001664142163E20600DF67EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001664122163E20600DF67EA /* LaunchScreen.storyboard */; };
+		00BE8463216E912000C7AC1B /* WaltResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE8462216E912000C7AC1B /* WaltResultsModel.swift */; };
 		F29D001D6657D42EFF8A30A7 /* Pods_xcodePlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		001664102163E20600DF67EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001664132163E20600DF67EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001664152163E20600DF67EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00BE8462216E912000C7AC1B /* WaltResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaltResultsModel.swift; sourceTree = "<group>"; };
 		68FF3C75D2991B99E1F58CF8 /* Pods-xcodePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		6B58E0BBCCAE3D5C04F764CF /* Pods-xcodePlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.release.xcconfig"; sourceTree = "<group>"; };
 		E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xcodePlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +69,7 @@
 				001664102163E20600DF67EA /* Assets.xcassets */,
 				001664122163E20600DF67EA /* LaunchScreen.storyboard */,
 				001664152163E20600DF67EA /* Info.plist */,
+				00BE8462216E912000C7AC1B /* WaltResultsModel.swift */,
 			);
 			path = xcodePlayground;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0016640C2163E20500DF67EA /* ViewController.swift in Sources */,
+				00BE8463216E912000C7AC1B /* WaltResultsModel.swift in Sources */,
 				0016640A2163E20500DF67EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
