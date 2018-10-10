@@ -11,37 +11,58 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
-
-    @IBAction func GoToSecondPage(_ sender: Any) {
-        performSegue(withIdentifier: "Segue",  sender: self)
-    }
+    var predictionsUrl = ""
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC : SecondViewController = segue.destination as! SecondViewController
-        destVC.dataFromFirst = "Hello there!"
+    @IBOutlet weak var urlInput: UITextField!
+    
+    @IBAction func checkButton(_ sender: UIButton) {
+        let parameters : [String: String] = ["url": urlInput.text!]
+        toWalt(url: predictionsUrl, parameters: parameters)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hateoas()
-//        let header = UIView(frame : CGRect(x:0, y:0, width:self.view.frame.width, height:self.view.frame.height * 0.08))
-//        header.backgroundColor = UIColor.red
-//        self.view.addSubview(header)
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     func hateoas() {
         Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
-            if let result = response.result.value {
-                let json = JSON(result)
-                print(json["_links"]["predictions"]["href"])
+            if response.result.isSuccess {
+                let resultJSON : JSON = JSON(response.result.value!)
+                self.predictionUrl(json : resultJSON)
+            } else {
+                print("fail")
             }
         }
     }
-}
+    
+    func predictionUrl (json : JSON) {
+        predictionsUrl = json["_links"]["predictions"]["href"].string!
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    func toWalt (url: String, parameters: [String: String]) {
 
+        let headers: HTTPHeaders = [
+            "Cache-Control": "no-cache",
+            "Content-Type": "application/json"
+        ]
+        Alamofire.request(url,
+                          method: .post,
+                          parameters: parameters,
+                          encoding: JSONEncoding.default,
+                          headers: headers).responseJSON {
+                            response in
+                            if response.result.isSuccess {
+                                let resultJSON : JSON = JSON(response.result.value!)
+                                print("success! \( resultJSON)")
+                            }
+                            else {
+                                print("fail")
+                            }
+        }
+    }
+}

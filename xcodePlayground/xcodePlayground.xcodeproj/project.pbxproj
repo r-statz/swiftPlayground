@@ -12,7 +12,6 @@
 		0016640F2163E20500DF67EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0016640D2163E20500DF67EA /* Main.storyboard */; };
 		001664112163E20600DF67EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001664102163E20600DF67EA /* Assets.xcassets */; };
 		001664142163E20600DF67EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001664122163E20600DF67EA /* LaunchScreen.storyboard */; };
-		004C7B9221652B66009B342E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004C7B9121652B66009B342E /* SecondViewController.swift */; };
 		F29D001D6657D42EFF8A30A7 /* Pods_xcodePlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		001664102163E20600DF67EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001664132163E20600DF67EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001664152163E20600DF67EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		004C7B9121652B66009B342E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		68FF3C75D2991B99E1F58CF8 /* Pods-xcodePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		6B58E0BBCCAE3D5C04F764CF /* Pods-xcodePlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.release.xcconfig"; sourceTree = "<group>"; };
 		E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xcodePlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +67,6 @@
 				001664102163E20600DF67EA /* Assets.xcassets */,
 				001664122163E20600DF67EA /* LaunchScreen.storyboard */,
 				001664152163E20600DF67EA /* Info.plist */,
-				004C7B9121652B66009B342E /* SecondViewController.swift */,
 			);
 			path = xcodePlayground;
 			sourceTree = "<group>";
@@ -165,16 +162,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -189,15 +182,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-xcodePlayground-checkManifestLockResult.txt",
 			);
@@ -213,7 +202,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004C7B9221652B66009B342E /* SecondViewController.swift in Sources */,
 				0016640C2163E20500DF67EA /* ViewController.swift in Sources */,
 				0016640A2163E20500DF67EA /* AppDelegate.swift in Sources */,
 			);
