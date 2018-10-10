@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
+    let WRM = WaltResultsModel()
+    
     var predictionsUrl = ""
     
     @IBOutlet weak var urlInput: UITextField!
@@ -18,11 +20,13 @@ class ViewController: UIViewController {
     @IBAction func checkButton(_ sender: UIButton) {
         let parameters : [String: String] = ["url": urlInput.text!]
         toWalt(url: predictionsUrl, parameters: parameters)
+        WRM.write()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         hateoas()
+        
     }
     
     func hateoas() {
@@ -40,10 +44,6 @@ class ViewController: UIViewController {
         predictionsUrl = json["_links"]["predictions"]["href"].string!
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func toWalt (url: String, parameters: [String: String]) {
 
         let headers: HTTPHeaders = [
@@ -57,12 +57,27 @@ class ViewController: UIViewController {
                           headers: headers).responseJSON {
                             response in
                             if response.result.isSuccess {
-                                let resultJSON : JSON = JSON(response.result.value!)
-                                print("success! \( resultJSON)")
+                            let resultJSON : JSON = JSON(response.result.value!)
+                                self.updateModel(json: resultJSON)
+                                
                             }
                             else {
                                 print("fail")
                             }
         }
+    }
+    
+    func updateModel(json: JSON) {
+        
+        WRM.name = json["predictions"][0]["name"].stringValue
+        WRM.value = json["predictions"][0]["value"].floatValue
+        WRM.color = json["predictions"][0]["color"].stringValue
+
+        WRM.walt_says = json["walt_says"].stringValue
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
