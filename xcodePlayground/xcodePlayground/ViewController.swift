@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     let WRM = WaltResultsModel()
-    
     var predictionsUrl = ""
     
     @IBOutlet weak var urlInput: UITextField!
@@ -25,21 +24,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hateoas()
+        hateoas()
         
     }
     
-//    func hateoas() {
-//        Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
-//            if response.result.isSuccess {
-//                print("success")
-////                let resultJSON : JSON = JSON(response.result.value!)
-////                self.predictionUrl(json : resultJSON)
-//            } else {
-//                print("fail")
-//            }
-//        }
-//    }
+    func hateoas() {
+        Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
+            if response.result.isSuccess {
+                print("success")
+                let resultJSON : JSON = JSON(response.result.value!)
+                self.predictionUrl(json : resultJSON)
+            } else {
+                print("fail")
+            }
+        }
+    }
     
     func predictionUrl (json : JSON) {
         predictionsUrl = json["_links"]["predictions"]["href"].string!
