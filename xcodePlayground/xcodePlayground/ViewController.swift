@@ -25,20 +25,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hateoas()
+        self.hateoas()
         
     }
     
-    func hateoas() {
-        Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
-            if response.result.isSuccess {
-                let resultJSON : JSON = JSON(response.result.value!)
-                self.predictionUrl(json : resultJSON)
-            } else {
-                print("fail")
-            }
-        }
-    }
+//    func hateoas() {
+//        Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
+//            if response.result.isSuccess {
+//                print("success")
+////                let resultJSON : JSON = JSON(response.result.value!)
+////                self.predictionUrl(json : resultJSON)
+//            } else {
+//                print("fail")
+//            }
+//        }
+//    }
     
     func predictionUrl (json : JSON) {
         predictionsUrl = json["_links"]["predictions"]["href"].string!
@@ -72,7 +73,6 @@ class ViewController: UIViewController {
         WRM.name = json["predictions"][0]["name"].stringValue
         WRM.value = json["predictions"][0]["value"].floatValue
         WRM.color = json["predictions"][0]["color"].stringValue
-
         WRM.walt_says = json["walt_says"].stringValue
         
     }
