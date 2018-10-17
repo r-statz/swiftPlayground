@@ -13,8 +13,40 @@
 		001664112163E20600DF67EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001664102163E20600DF67EA /* Assets.xcassets */; };
 		001664142163E20600DF67EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001664122163E20600DF67EA /* LaunchScreen.storyboard */; };
 		00BE8463216E912000C7AC1B /* WaltResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE8462216E912000C7AC1B /* WaltResultsModel.swift */; };
+		464A1F02216FD81A004A5890 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A1F01216FD81A004A5890 /* ActionViewController.swift */; };
+		464A1F05216FD81A004A5890 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464A1F03216FD81A004A5890 /* MainInterface.storyboard */; };
+		464A1F09216FD81B004A5890 /* FakerFact.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 464A1EFF216FD81A004A5890 /* FakerFact.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		464A1F0F216FDCE3004A5890 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464A1F0E216FDCE3004A5890 /* Alamofire.framework */; };
+		464A1F11216FDE8C004A5890 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464A1F10216FDE8C004A5890 /* SwiftyJSON.framework */; };
+		464A1F1A216FFBCA004A5890 /* WaltResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE8462216E912000C7AC1B /* WaltResultsModel.swift */; };
+		464A1F1F2174D852004A5890 /* HateoasExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A1F1E2174D852004A5890 /* HateoasExtension.swift */; };
+		464A1F202174D852004A5890 /* HateoasExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A1F1E2174D852004A5890 /* HateoasExtension.swift */; };
 		F29D001D6657D42EFF8A30A7 /* Pods_xcodePlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		464A1F07216FD81B004A5890 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 001663FE2163E20500DF67EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 464A1EFE216FD81A004A5890;
+			remoteInfo = FakerFact;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		464A1F0D216FD81B004A5890 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				464A1F09216FD81B004A5890 /* FakerFact.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		001664062163E20500DF67EA /* xcodePlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xcodePlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,8 +57,17 @@
 		001664132163E20600DF67EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		001664152163E20600DF67EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00BE8462216E912000C7AC1B /* WaltResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaltResultsModel.swift; sourceTree = "<group>"; };
+		210FF6C5806B08AA9C176B81 /* Pods-xcodePlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.release.xcconfig"; sourceTree = "<group>"; };
+		464A1EFF216FD81A004A5890 /* FakerFact.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FakerFact.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		464A1F01216FD81A004A5890 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		464A1F04216FD81A004A5890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		464A1F06216FD81A004A5890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		464A1F0E216FDCE3004A5890 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		464A1F10216FDE8C004A5890 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		464A1F17216FEB18004A5890 /* FakerFact.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FakerFact.entitlements; sourceTree = "<group>"; };
+		464A1F18216FEB38004A5890 /* xcodePlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xcodePlayground.entitlements; sourceTree = "<group>"; };
+		464A1F1E2174D852004A5890 /* HateoasExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HateoasExtension.swift; sourceTree = "<group>"; };
 		68FF3C75D2991B99E1F58CF8 /* Pods-xcodePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.debug.xcconfig"; sourceTree = "<group>"; };
-		6B58E0BBCCAE3D5C04F764CF /* Pods-xcodePlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.release.xcconfig"; sourceTree = "<group>"; };
 		E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xcodePlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -39,6 +80,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		464A1EFC216FD81A004A5890 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464A1F11216FDE8C004A5890 /* SwiftyJSON.framework in Frameworks */,
+				464A1F0F216FDCE3004A5890 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				001664082163E20500DF67EA /* xcodePlayground */,
+				464A1F00216FD81A004A5890 /* FakerFact */,
 				001664072163E20500DF67EA /* Products */,
 				AB485EAFC89349F4285A558B /* Pods */,
 				A238FA2311273EBEE299BD7E /* Frameworks */,
@@ -56,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				001664062163E20500DF67EA /* xcodePlayground.app */,
+				464A1EFF216FD81A004A5890 /* FakerFact.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +115,7 @@
 		001664082163E20500DF67EA /* xcodePlayground */ = {
 			isa = PBXGroup;
 			children = (
+				464A1F18216FEB38004A5890 /* xcodePlayground.entitlements */,
 				001664092163E20500DF67EA /* AppDelegate.swift */,
 				0016640B2163E20500DF67EA /* ViewController.swift */,
 				0016640D2163E20500DF67EA /* Main.storyboard */,
@@ -70,13 +123,27 @@
 				001664122163E20600DF67EA /* LaunchScreen.storyboard */,
 				001664152163E20600DF67EA /* Info.plist */,
 				00BE8462216E912000C7AC1B /* WaltResultsModel.swift */,
+				464A1F1E2174D852004A5890 /* HateoasExtension.swift */,
 			);
 			path = xcodePlayground;
+			sourceTree = "<group>";
+		};
+		464A1F00216FD81A004A5890 /* FakerFact */ = {
+			isa = PBXGroup;
+			children = (
+				464A1F17216FEB18004A5890 /* FakerFact.entitlements */,
+				464A1F01216FD81A004A5890 /* ActionViewController.swift */,
+				464A1F03216FD81A004A5890 /* MainInterface.storyboard */,
+				464A1F06216FD81A004A5890 /* Info.plist */,
+			);
+			path = FakerFact;
 			sourceTree = "<group>";
 		};
 		A238FA2311273EBEE299BD7E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				464A1F10216FDE8C004A5890 /* SwiftyJSON.framework */,
+				464A1F0E216FDCE3004A5890 /* Alamofire.framework */,
 				E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */,
 			);
 			name = Frameworks;
@@ -86,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				68FF3C75D2991B99E1F58CF8 /* Pods-xcodePlayground.debug.xcconfig */,
-				6B58E0BBCCAE3D5C04F764CF /* Pods-xcodePlayground.release.xcconfig */,
+				210FF6C5806B08AA9C176B81 /* Pods-xcodePlayground.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -103,15 +170,34 @@
 				001664032163E20500DF67EA /* Frameworks */,
 				001664042163E20500DF67EA /* Resources */,
 				2863A39AD4788FFFE05032E7 /* [CP] Embed Pods Frameworks */,
+				464A1F0D216FD81B004A5890 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				464A1F08216FD81B004A5890 /* PBXTargetDependency */,
 			);
 			name = xcodePlayground;
 			productName = xcodePlayground;
 			productReference = 001664062163E20500DF67EA /* xcodePlayground.app */;
 			productType = "com.apple.product-type.application";
+		};
+		464A1EFE216FD81A004A5890 /* FakerFact */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 464A1F0C216FD81B004A5890 /* Build configuration list for PBXNativeTarget "FakerFact" */;
+			buildPhases = (
+				464A1EFB216FD81A004A5890 /* Sources */,
+				464A1EFC216FD81A004A5890 /* Frameworks */,
+				464A1EFD216FD81A004A5890 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakerFact;
+			productName = FakerFact;
+			productReference = 464A1EFF216FD81A004A5890 /* FakerFact.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -119,12 +205,25 @@
 		001663FE2163E20500DF67EA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "Robin Statz";
+				ORGANIZATIONNAME = "Wednesday McViking";
 				TargetAttributes = {
 					001664052163E20500DF67EA = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					464A1EFE216FD81A004A5890 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -142,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				001664052163E20500DF67EA /* xcodePlayground */,
+				464A1EFE216FD81A004A5890 /* FakerFact */,
 			);
 		};
 /* End PBXProject section */
@@ -154,6 +254,14 @@
 				001664142163E20600DF67EA /* LaunchScreen.storyboard in Resources */,
 				001664112163E20600DF67EA /* Assets.xcassets in Resources */,
 				0016640F2163E20500DF67EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464A1EFD216FD81A004A5890 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464A1F05216FD81A004A5890 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,10 +316,29 @@
 				0016640C2163E20500DF67EA /* ViewController.swift in Sources */,
 				00BE8463216E912000C7AC1B /* WaltResultsModel.swift in Sources */,
 				0016640A2163E20500DF67EA /* AppDelegate.swift in Sources */,
+				464A1F1F2174D852004A5890 /* HateoasExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464A1EFB216FD81A004A5890 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464A1F1A216FFBCA004A5890 /* WaltResultsModel.swift in Sources */,
+				464A1F202174D852004A5890 /* HateoasExtension.swift in Sources */,
+				464A1F02216FD81A004A5890 /* ActionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		464A1F08216FD81B004A5890 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 464A1EFE216FD81A004A5890 /* FakerFact */;
+			targetProxy = 464A1F07216FD81B004A5890 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0016640D2163E20500DF67EA /* Main.storyboard */ = {
@@ -228,6 +355,14 @@
 				001664132163E20600DF67EA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		464A1F03216FD81A004A5890 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				464A1F04216FD81A004A5890 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -351,14 +486,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68FF3C75D2991B99E1F58CF8 /* Pods-xcodePlayground.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xcodePlayground/xcodePlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2DVS4NG8H;
 				INFOPLIST_FILE = xcodePlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.robinstatz.xcodePlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wednesday.xcodePlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -367,18 +505,68 @@
 		};
 		0016641A2163E20600DF67EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B58E0BBCCAE3D5C04F764CF /* Pods-xcodePlayground.release.xcconfig */;
+			baseConfigurationReference = 210FF6C5806B08AA9C176B81 /* Pods-xcodePlayground.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = xcodePlayground/xcodePlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2DVS4NG8H;
 				INFOPLIST_FILE = xcodePlayground/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.robinstatz.xcodePlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wednesday.xcodePlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		464A1F0A216FD81B004A5890 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68FF3C75D2991B99E1F58CF8 /* Pods-xcodePlayground.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FakerFact/FakerFact.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2DVS4NG8H;
+				INFOPLIST_FILE = FakerFact/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wednesday.xcodePlayground.FakerFact;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		464A1F0B216FD81B004A5890 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 210FF6C5806B08AA9C176B81 /* Pods-xcodePlayground.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FakerFact/FakerFact.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2DVS4NG8H;
+				INFOPLIST_FILE = FakerFact/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wednesday.xcodePlayground.FakerFact;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -400,6 +588,15 @@
 			buildConfigurations = (
 				001664192163E20600DF67EA /* Debug */,
 				0016641A2163E20600DF67EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		464A1F0C216FD81B004A5890 /* Build configuration list for PBXNativeTarget "FakerFact" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				464A1F0A216FD81B004A5890 /* Debug */,
+				464A1F0B216FD81B004A5890 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
