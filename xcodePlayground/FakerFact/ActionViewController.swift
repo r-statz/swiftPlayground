@@ -14,6 +14,11 @@ import Foundation
 
 class ActionViewController: UIViewController {
 
+    @IBOutlet weak var urlLabel: UILabel!
+    
+    @IBOutlet weak var hateLabel: UILabel!
+    
+    
     let WRM = WaltResultsModel()
     var extensionURL : String?
     var predictionsURL = ""
@@ -28,19 +33,19 @@ class ActionViewController: UIViewController {
         
         for attachment in extensionItem.attachments as! [NSItemProvider] {
             if attachment.isURL {
-                
                 attachment.loadItem(forTypeIdentifier: contentTypeURL, options: nil, completionHandler: { (results, error) in
                     let url = results as! URL?
-                    //This prints the url, but it's optional?
-                    print(url)
-                    self.extensionURL = url!.absoluteString
+                    if let newUrl = url {
+                    self.extensionURL = newUrl.absoluteString
+                    self.hateoas()
+                        self.hateLabel.text = self.predictionsURL
+                        self.urlLabel.text = self.extensionURL!
+//                    print(" extension url \(self.extensionURL!)")
+                    } else {
+                        //handle error gracefully
+                    }
                 })
             }
-        
-            
-        hateoas()
-        //Here the url is nil
-        print(" extension url \(self.extensionURL)")
     }
     }
 
