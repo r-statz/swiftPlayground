@@ -28,14 +28,18 @@ class ActionViewController: UIViewController {
         
         for attachment in extensionItem.attachments as! [NSItemProvider] {
             if attachment.isURL {
+                
                 attachment.loadItem(forTypeIdentifier: contentTypeURL, options: nil, completionHandler: { (results, error) in
                     let url = results as! URL?
+                    //This prints the url, but it's optional?
+                    print(url)
                     self.extensionURL = url!.absoluteString
                 })
             }
         
             
         hateoas()
+        //Here the url is nil
         print(" extension url \(self.extensionURL)")
     }
     }
