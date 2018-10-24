@@ -37,9 +37,9 @@ class ActionViewController: UIViewController {
                     let url = results as! URL?
                     if let newUrl = url {
                     self.extensionURL = newUrl.absoluteString
-                    self.hateoas()
-                        self.hateLabel.text = self.predictionsURL
-                        self.urlLabel.text = self.extensionURL!
+                    self.hateoas(newsUrl: self.extensionURL!)
+//                        self.hateLabel.text = self.predictionsURL
+//                        self.urlLabel.text = self.extensionURL!
 //                    print(" extension url \(self.extensionURL!)")
                     } else {
                         //handle error gracefully
@@ -55,24 +55,28 @@ class ActionViewController: UIViewController {
         self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
     }
 
-    func hateoas() {
+    func hateoas(newsUrl: String) {
+        let parameters : [String: String] = ["url": newsUrl]
         Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
         if response.result.isSuccess {
             print("success")
             let resultJSON : JSON = JSON(response.result.value!)
-            self.predictionURL(json : resultJSON)
+            let predictionsUrl = self.predictionURL(json : resultJSON)
+            self.toWalt(url: predictionsUrl, parameters: parameters)
+            print("this is success \(predictionsUrl)")
         } else {
             print("fail")
         }
     }
 }
-
-    func predictionURL (json : JSON) {
-    predictionsURL = json["_links"]["predictions"]["href"].string!
+//
+    func predictionURL (json : JSON) -> String {
+        let predictionsURL = json["_links"]["predictions"]["href"].string!
+        return predictionsURL
 }
 
     func toWalt (url: String, parameters: [String: String]) {
-    
+        print("in Walt 2 \(url)")
         let headers: HTTPHeaders = [
             "Cache-Control": "no-cache",
             "Content-Type": "application/json"
@@ -87,8 +91,9 @@ class ActionViewController: UIViewController {
                 if response.result.isSuccess {
                     let resultJSON : JSON = JSON(response.result.value!)
                     self.updateModel(json: resultJSON)
+                    self.WRM.write()
                 } else {
-                    print("fail")
+                    print("Walt Failed")
                 }
     }
 }
