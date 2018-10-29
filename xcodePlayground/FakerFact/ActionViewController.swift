@@ -99,11 +99,15 @@ class ActionViewController: UIViewController {
 }
 
     func updateModel(json: JSON) {
-    
+        let hello = json["predictions"]
+        for i in 0...(hello.count-2) {
+            print("STRING INTERPS \(hello[i])")
+        }
         WRM.name = json["predictions"][0]["name"].stringValue
         WRM.value = json["predictions"][0]["value"].floatValue
         WRM.color = json["predictions"][0]["color"].stringValue
         WRM.walt_says = json["walt_says"].stringValue
+        WRM.url = json["walt_says"].stringValue
     }
 }
 

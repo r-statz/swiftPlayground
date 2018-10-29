@@ -59,7 +59,6 @@ class ViewController: UIViewController {
                             if response.result.isSuccess {
                             let resultJSON : JSON = JSON(response.result.value!)
                                 self.updateModel(json: resultJSON)
-                                
                             }
                             else {
                                 print("fail")
