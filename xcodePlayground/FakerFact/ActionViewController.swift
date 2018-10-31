@@ -13,16 +13,17 @@ import SwiftyJSON
 import Foundation
 
 struct Response: Decodable {
-    let walt_says: String?
-    let url: String?
+    let walt_says: String
+    let url: String
     let predictions: [Prediction]
+    let title: String
 }
 
 struct Prediction: Decodable {
-    let name: String?
-    let value: Int?
-    let color: String?
-    let display_name: String?
+    let name: String
+    let value: Int
+    let color: String
+    let display_name: String
     
 }
 
@@ -91,10 +92,6 @@ class ActionViewController: UIViewController {
 //
 //    }
     func hateoas(newsUrl: String) {
-        let headers: HTTPHeaders = [
-            "Cache-Control": "no-cache",
-            "Content-Type": "application/json"
-        ]
         let parameters : [String: String] = ["url": newsUrl]
             Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
             if response.result.isSuccess {
@@ -128,9 +125,20 @@ class ActionViewController: UIViewController {
 //            headers: headers).responseJSON {
 //                response in
 //                if response.result.isSuccess {
-//                    let resultJSON : JSON = JSON(response.result.value!)
-//                    self.updateModel(json: resultJSON)
-//                    self.WRM.write()
+//                    guard let resultJSON = response.result.value else {
+//                        print("did not get the result")
+//                        return
+//
+//                    }
+////                    let resultJSON : JSON = JSON(response.result.value!)
+//                    do {
+//                        let receivedPredictions = try JSONDecoder().decode(Response.self, from: resultJSON as! Data)
+////                    self.updateModel(json: resultJSON)
+////                    self.WRM.write()
+//                        print(receivedPredictions, "THIS IS RECEIVER PREDICTIONS")
+//                    } catch {
+//                        print("There is an error serializing json:")
+//                    }
 //                } else {
 //                    print("Walt Failed")
 //                }
@@ -138,7 +146,7 @@ class ActionViewController: UIViewController {
 //}
     
     func toWalt (url: String, parameters: [String: String]) {
-        guard let predictionsURL = URL(string: url) else {
+        guard let predictionsURL = URL(string: "https://api.fakerfact.org/api/predictions") else {
             print("Error: cannot create URL")
             return
         }
@@ -154,7 +162,7 @@ class ActionViewController: UIViewController {
             print("Error: cannot create JSON from todo")
             return
         }
-        
+
         URLSession.shared.dataTask(with: predictionsUrlRequest) { (data, response, err) in
             guard err == nil else {
                 print("error!")
@@ -165,18 +173,19 @@ class ActionViewController: UIViewController {
                 return
             }
             do {
-                guard let receivedPredictions = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                    print("Could not get JSON from responseData as dictionary")
-                    return
-                }
+              let receivedPredictions = try JSONDecoder().decode(Response.self, from: data)
+//                guard let receivedPredictions = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+//                    return
+//                }
                 print(receivedPredictions, "Here are Walt's predictions")
-            } catch {
+                print(receivedPredictions.title, "Here")
+            }catch {
                     print("There is an error serializing json:")
                 }
             }.resume()
         }
     }
-        
+
 
 //    func updateModel(json: JSON) {
 //        let hello = json["predictions"]
@@ -190,6 +199,7 @@ class ActionViewController: UIViewController {
 //        WRM.url = json["walt_says"].stringValue
 //    }
 
+//}
 
 extension NSItemProvider {
     var isURL: Bool {
@@ -198,4 +208,5 @@ extension NSItemProvider {
     var isText: Bool {
         return hasItemConformingToTypeIdentifier(kUTTypeText as String)
     }
-}
+    }
+
