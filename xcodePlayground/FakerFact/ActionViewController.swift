@@ -8,7 +8,6 @@
 
 import UIKit
 import MobileCoreServices
-import Alamofire
 import SwiftyJSON
 import Foundation
 
@@ -24,7 +23,14 @@ struct Prediction: Decodable {
     let value: Int
     let color: String
     let display_name: String
-    
+}
+
+struct Links {
+    let predictions: Predictions
+}
+
+struct Predictions {
+    let href: String
 }
 
 class ActionViewController: UIViewController {
@@ -52,10 +58,8 @@ class ActionViewController: UIViewController {
                     if let newUrl = url {
                     self.extensionURL = newUrl.absoluteString
                     self.hateoas(newsUrl: self.extensionURL!)
-//                        self.hateLabel.text = self.predictionsURL
-//                        self.urlLabel.text = self.extensionURL!
-//                    print(" extension url \(self.extensionURL!)")
                     } else {
+                        print("there is no url")
                         //handle error gracefully
                     }
                 })
@@ -69,84 +73,32 @@ class ActionViewController: UIViewController {
         self.extensionContext!.completeRequest(returningItems: self.extensionContext!.inputItems, completionHandler: nil)
     }
     
-//    func hateoas(newsUrl: String) {
-//        let apiUrl = "https://api.fakerfact.org/api"
-//        guard let hateoasUrl = URL(string: apiUrl) else { return }
-////        guard let newsUrl = URL(string: newsUrl) else { return }
-//
-//        URLSession.shared.dataTask(with: hateoasUrl) { (data, response, err) in
-//            guard let data = data else { return }
-//
-//            do {
-//
-//                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
-////                let predictionsURL = json["_links"]["predictions"]["href"].string!
-////                let results = try JSONDecoder().decode(Hateoas.self, from: data)
-////                print("results are \(results)")
-//            } catch let jsonErr {
-//
-//                print("There is an error serializing json:", jsonErr)
-//
-//            }
-//        }.resume()
-//
-//    }
     func hateoas(newsUrl: String) {
         let parameters : [String: String] = ["url": newsUrl]
-            Alamofire.request("https://api.fakerfact.org/api").responseJSON { response in
-            if response.result.isSuccess {
-                print("success")
-//                let resultJSON : JSON = JSON(response.result.value!)
-//                var predictionsUrl = self.predictionURL(json : resultJSON)
-                self.toWalt(url: "https://api.fakerfact.org/api/predictions", parameters: parameters)
-//                print("this is success \(predictionsUrl)")
-            } else {
-                print("fail")
+        let apiUrl = "https://api.fakerfact.org/api"
+        guard let hateoasUrl = URL(string: apiUrl) else { return }
+
+        URLSession.shared.dataTask(with: hateoasUrl) { (data, response, err) in
+            guard let data = data else { return }
+            guard err == nil else {
+                print("error!")
+                return
             }
-        }
+            do {
+                let results: JSON = JSON(data)
+                let predictionsURL = results["_links"]["predictions"]["href"].string!
+                print("results are \(results)")
+                print("predictionsURL are \(predictionsURL)")
+                self.toWalt(url: predictionsURL, parameters: parameters)
+            } catch let jsonErr {
+                print("There is an error serializing json:", jsonErr)
+            }
+        }.resume()
+
     }
-
-    func predictionURL (json : JSON) -> String {
-        let predictionsURL = json["_links"]["predictions"]["href"].string!
-        return predictionsURL
-}
-
-//    func toWalt (url: String, parameters: [String: String]) {
-//        print("in Walt 2 \(url)")
-//        let headers: HTTPHeaders = [
-//            "Cache-Control": "no-cache",
-//            "Content-Type": "application/json"
-//            ]
-//        Alamofire.request(
-//            url,
-//            method: .post,
-//            parameters: parameters,
-//            encoding: JSONEncoding.default,
-//            headers: headers).responseJSON {
-//                response in
-//                if response.result.isSuccess {
-//                    guard let resultJSON = response.result.value else {
-//                        print("did not get the result")
-//                        return
-//
-//                    }
-////                    let resultJSON : JSON = JSON(response.result.value!)
-//                    do {
-//                        let receivedPredictions = try JSONDecoder().decode(Response.self, from: resultJSON as! Data)
-////                    self.updateModel(json: resultJSON)
-////                    self.WRM.write()
-//                        print(receivedPredictions, "THIS IS RECEIVER PREDICTIONS")
-//                    } catch {
-//                        print("There is an error serializing json:")
-//                    }
-//                } else {
-//                    print("Walt Failed")
-//                }
-//    }
-//}
     
     func toWalt (url: String, parameters: [String: String]) {
-        guard let predictionsURL = URL(string: "https://api.fakerfact.org/api/predictions") else {
+        guard let predictionsURL = URL(string: url) else {
             print("Error: cannot create URL")
             return
         }
@@ -174,32 +126,13 @@ class ActionViewController: UIViewController {
             }
             do {
               let receivedPredictions = try JSONDecoder().decode(Response.self, from: data)
-//                guard let receivedPredictions = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-//                    return
-//                }
-                print(receivedPredictions, "Here are Walt's predictions")
-                print(receivedPredictions.title, "Here")
+                
             }catch {
                     print("There is an error serializing json:")
                 }
             }.resume()
         }
     }
-
-
-//    func updateModel(json: JSON) {
-//        let hello = json["predictions"]
-//        for i in 0...(hello.count-2) {
-//            print("STRING INTERPS \(hello[i])")
-//        }
-//        WRM.name = json["predictions"][0]["name"].stringValue
-//        WRM.value = json["predictions"][0]["value"].floatValue
-//        WRM.color = json["predictions"][0]["color"].stringValue
-//        WRM.walt_says = json["walt_says"].stringValue
-//        WRM.url = json["walt_says"].stringValue
-//    }
-
-//}
 
 extension NSItemProvider {
     var isURL: Bool {
