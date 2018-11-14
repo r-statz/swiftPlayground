@@ -19,6 +19,14 @@
 		464A1F0F216FDCE3004A5890 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464A1F0E216FDCE3004A5890 /* Alamofire.framework */; };
 		464A1F11216FDE8C004A5890 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464A1F10216FDE8C004A5890 /* SwiftyJSON.framework */; };
 		464A1F1A216FFBCA004A5890 /* WaltResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE8462216E912000C7AC1B /* WaltResultsModel.swift */; };
+		46E9C9A0218AA513001762DC /* BarChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46E9C99F218AA513001762DC /* BarChart.xib */; };
+		46E9C9A2218AA598001762DC /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9C9A1218AA598001762DC /* BarChart.swift */; };
+		46E9C9A3218AA6EF001762DC /* BarChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46E9C99F218AA513001762DC /* BarChart.xib */; };
+		46E9C9A5218AB1E8001762DC /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9C9A4218AB1E8001762DC /* Structs.swift */; };
+		46E9C9A6218AB261001762DC /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9C9A4218AB1E8001762DC /* Structs.swift */; };
+		46E9C9A8218AC411001762DC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9C9A7218AC411001762DC /* UIColor.swift */; };
+		46E9C9AB218AC64F001762DC /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9C9A9218AC64F001762DC /* BarCell.swift */; };
+		46E9C9AC218AC87B001762DC /* BarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E9C9A9218AC64F001762DC /* BarCell.swift */; };
 		F29D001D6657D42EFF8A30A7 /* Pods_xcodePlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +72,11 @@
 		464A1F10216FDE8C004A5890 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		464A1F17216FEB18004A5890 /* FakerFact.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FakerFact.entitlements; sourceTree = "<group>"; };
 		464A1F18216FEB38004A5890 /* xcodePlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = xcodePlayground.entitlements; sourceTree = "<group>"; };
+		46E9C99F218AA513001762DC /* BarChart.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarChart.xib; sourceTree = "<group>"; };
+		46E9C9A1218AA598001762DC /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		46E9C9A4218AB1E8001762DC /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		46E9C9A7218AC411001762DC /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		46E9C9A9218AC64F001762DC /* BarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCell.swift; sourceTree = "<group>"; };
 		68FF3C75D2991B99E1F58CF8 /* Pods-xcodePlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xcodePlayground.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xcodePlayground/Pods-xcodePlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		E1D0BFE94E763DDE283CEC4E /* Pods_xcodePlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xcodePlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -120,6 +133,10 @@
 				001664122163E20600DF67EA /* LaunchScreen.storyboard */,
 				001664152163E20600DF67EA /* Info.plist */,
 				00BE8462216E912000C7AC1B /* WaltResultsModel.swift */,
+				46E9C99F218AA513001762DC /* BarChart.xib */,
+				46E9C9A1218AA598001762DC /* BarChart.swift */,
+				46E9C9A4218AB1E8001762DC /* Structs.swift */,
+				46E9C9A7218AC411001762DC /* UIColor.swift */,
 			);
 			path = xcodePlayground;
 			sourceTree = "<group>";
@@ -130,6 +147,7 @@
 				464A1F17216FEB18004A5890 /* FakerFact.entitlements */,
 				464A1F01216FD81A004A5890 /* ActionViewController.swift */,
 				464A1F03216FD81A004A5890 /* MainInterface.storyboard */,
+				46E9C9A9218AC64F001762DC /* BarCell.swift */,
 				464A1F06216FD81A004A5890 /* Info.plist */,
 			);
 			path = FakerFact;
@@ -247,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E9C9A0218AA513001762DC /* BarChart.xib in Resources */,
 				001664142163E20600DF67EA /* LaunchScreen.storyboard in Resources */,
 				001664112163E20600DF67EA /* Assets.xcassets in Resources */,
 				0016640F2163E20500DF67EA /* Main.storyboard in Resources */,
@@ -257,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E9C9A3218AA6EF001762DC /* BarChart.xib in Resources */,
 				464A1F05216FD81A004A5890 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,8 +329,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E9C9A2218AA598001762DC /* BarChart.swift in Sources */,
+				46E9C9A8218AC411001762DC /* UIColor.swift in Sources */,
 				0016640C2163E20500DF67EA /* ViewController.swift in Sources */,
+				46E9C9A5218AB1E8001762DC /* Structs.swift in Sources */,
 				00BE8463216E912000C7AC1B /* WaltResultsModel.swift in Sources */,
+				46E9C9AC218AC87B001762DC /* BarCell.swift in Sources */,
 				0016640A2163E20500DF67EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +343,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E9C9A6218AB261001762DC /* Structs.swift in Sources */,
+				46E9C9AB218AC64F001762DC /* BarCell.swift in Sources */,
 				464A1F1A216FFBCA004A5890 /* WaltResultsModel.swift in Sources */,
 				464A1F02216FD81A004A5890 /* ActionViewController.swift in Sources */,
 			);
