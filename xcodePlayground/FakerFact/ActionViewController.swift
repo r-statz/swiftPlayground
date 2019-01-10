@@ -11,28 +11,6 @@ import MobileCoreServices
 import SwiftyJSON
 import Foundation
 
-//struct Response: Decodable {
-//    let walt_says: String
-//    let url: String
-//    let predictions: [Prediction]
-//    let title: String
-//}
-//
-//struct Prediction: Decodable {
-//    let name: String
-//    let value: Int
-//    let color: String
-//    let display_name: String
-//}
-//
-//struct Links {
-//    let predictions: Predictions
-//}
-//
-//struct Predictions {
-//    let href: String
-//}
-
 class ActionViewController: UIViewController {
 
     @IBOutlet weak var urlLabel: UILabel!
@@ -124,11 +102,14 @@ class ActionViewController: UIViewController {
                 print("Error: Did not get Data")
                 return
             }
+            
+            print("data is", String(decoding: data, as: UTF8.self))
+            
             do {
-              let receivedPredictions = try JSONDecoder().decode(Response.self, from: data)
-                
-            }catch {
-                    print("There is an error serializing json:")
+              let receivedPredictions = try JSONDecoder().decode(WaltResponse.self, from: data)
+                print(receivedPredictions)
+            }catch let parsingError {
+                    print(parsingError)
                 }
             }.resume()
         }

@@ -8,30 +8,18 @@
 
 import Foundation
 
-struct Response: Decodable {
-    let walt_says: String
-    let url: String
-    let predictions: [Prediction]
-    let title: String
-}
-
-struct Prediction: Decodable {
-    let name: String
-    let value: Int
+struct Prediction : Codable {
     let color: String
     let display_name: String
+    let top_sentences: [String]
+    let value: Float
 }
 
-struct Links {
-    let predictions: Predictions
-}
-
-struct Predictions {
-    let href: String
-}
-
-struct BarGraph {
-    var predictions: [Prediction] = []
-    var response: Response 
+struct WaltResponse : Codable {
+    let predictions: [Prediction]
+    let time_to_predict: Float
+    let title: String
+    let url: String
+    let walt_says: String
 }
 

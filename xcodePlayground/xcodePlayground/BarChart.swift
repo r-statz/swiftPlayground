@@ -15,13 +15,12 @@ class BarChart: UIView {
     @IBOutlet weak var barValue: UIImageView!
     @IBOutlet weak var barName: UILabel!
     
-    var response: Prediction {
-        didSet {
-            barName.text = response.name
-            barValue.backgroundColor = UIColor(hexString: response.color)
-        }
-    }
-    
+//    var response: Prediction {
+//        didSet {
+//            barName.text = response.name
+//            barValue.backgroundColor = UIColor(hexString: response.color)
+//        }
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
