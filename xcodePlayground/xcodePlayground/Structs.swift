@@ -8,18 +8,19 @@
 
 import Foundation
 
-struct Prediction : Codable {
-    let color: String
-    let display_name: String
-    let top_sentences: [String]
-    let value: Float
-}
+//struct Prediction : Codable {
+//    let color: String
+//    let display_name: String
+//    let top_sentences: [String]
+//    let value: Float
+//}
 
 struct WaltResponse : Codable {
-    let predictions: [Prediction]
-    let time_to_predict: Float
-    let title: String
-    let url: String
-    let walt_says: String
+    let id: Int
+//    let predictions: [Prediction]
+//    let time_to_predict: Float
+//    let title: String
+//    let url: String
+//    let walt_says: String
 }
 

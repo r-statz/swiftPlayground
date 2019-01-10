@@ -10,15 +10,14 @@ import UIKit
 import MobileCoreServices
 import SwiftyJSON
 import Foundation
+import WebKit
 
 class ActionViewController: UIViewController {
 
-    @IBOutlet weak var urlLabel: UILabel!
     
-    @IBOutlet weak var hateLabel: UILabel!
+    @IBOutlet var webView: WKWebView!
     
     
-    let WRM = WaltResultsModel()
     var extensionURL : String?
     var predictionsURL = ""
     
@@ -26,6 +25,10 @@ class ActionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let url = URL(string: "https://www.fakerfact.org/thinking")
+        webView.load(URLRequest(url: url!))
+        
         let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
         let contentTypeURL = kUTTypeURL as String
         
@@ -106,8 +109,13 @@ class ActionViewController: UIViewController {
             print("data is", String(decoding: data, as: UTF8.self))
             
             do {
-              let receivedPredictions = try JSONDecoder().decode(WaltResponse.self, from: data)
-                print(receivedPredictions)
+              let waltResponse = try JSONDecoder().decode(WaltResponse.self, from: data)
+                print(waltResponse)
+
+                let url = URL(string: "https://www.fakerfact.org/walt-says/\(String(waltResponse.id))")
+                self.webView.load(URLRequest(url: url!))
+
+                
             }catch let parsingError {
                     print(parsingError)
                 }
